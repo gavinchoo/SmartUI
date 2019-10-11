@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=1.0, shrink-to-fit=no,user-scalable=0">
+  <title><%= htmlWebpackPlugin.options.title %></title>
+  <script>
+    (function flexible(window, document) {
+      var docEl = document.documentElement
+      var dpr = window.devicePixelRatio || 1
+
+      // adjust body font size
+      function setBodyFontSize() {
+        if (document.body) {
+          document.body.style.fontSize = (12 * dpr) + 'px'
+        }
+        else {
+          document.addEventListener('DOMContentLoaded', setBodyFontSize)
+        }
+      }
+      setBodyFontSize();
+
+      // set 1rem = viewWidth / 10
+      function setRemUnit() {
+        var rem = docEl.clientWidth / 10
+        docEl.style.fontSize = rem + 'px'
+      }
+
+      setRemUnit()
+
+      // reset rem unit on page resize
+      window.addEventListener('resize', setRemUnit)
+      window.addEventListener('pageshow', function (e) {
+        if (e.persisted) {
+          setRemUnit()
+        }
+      })
+
+      // detect 0.5px supports
+      if (dpr >= 2) {
+        var fakeBody = document.createElement('body')
+        var testElement = document.createElement('div')
+        testElement.style.border = '.5px solid transparent'
+        fakeBody.appendChild(testElement)
+        docEl.appendChild(fakeBody)
+        if (testElement.offsetHeight === 1) {
+          docEl.classList.add('hairlines')
+        }
+        docEl.removeChild(fakeBody)
+      }
+    }(window, document))
+
+  </script>
+  <style type="text/css">
+    * {
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      -khtml-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    body {
+      font-family: "PingFangSC", "Microsoft YaHei", "Helvetica";
+      margin: 0;
+      padding: 0;
+      color: #384744;
+      background: #F7F7F7;
+      overflow: auto;
+    }
+
+    input,
+    textarea {
+      -webkit-user-select: auto;
+      margin: 0px;
+      padding: 0px;
+      outline: none;
+    }
+
+    .pre-toolbar {
+      height: 1.2rem;
+      width: 100%;
+      position: fixex;
+      background-color: #108ee9;
+      color: white;
+      z-index: 1000;
+      -webkit-box-align: center;
+      align-items: center;
+      -webkit-transform: translateZ(0);
+    }
+
+    .pre-title {
+      -webkit-box-pack: center;
+      -webkit-justify-content: center;
+      justify-content: center;
+      position: fixed;
+      width: 100%;
+      font-size: 0.48rem;
+      text-align: center;
+      line-height: 1.2rem;
+      white-space: nowrap;
+    }
+
+    .pre-back {
+      z-index: 99;
+      width: 60px;
+      height: 45px;
+      position: fixed;
+      background-size: 20px;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="app">
+    <div id='pre-toolbar' class="pre-toolbar">
+      <div class="pre-title">
+        <%= htmlWebpackPlugin.options.title %>
+      </div>
+      <div class="pre-back"></div>
+    </div>
+  </div>
+</body>
+
+</html>

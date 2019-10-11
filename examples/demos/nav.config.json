@@ -1,0 +1,38 @@
+{
+  "开发指南": [
+    {
+      "name": "index",
+      "path": "/",
+      "type": "pages"
+    }
+  ],
+  "组件": [
+    {
+      "desc": "基础组件",
+      "path": "/component",
+      "items": [
+        {
+          "desc": "Section 布局",
+          "name": "section",
+          "path": "/section"
+        },
+        {
+          "desc": "ImageSelect图片选择",
+          "name": "imageselect",
+          "path": "/imageselect"
+        }
+      ]
+    },
+    {
+      "desc": "视图组件",
+      "path": "/component",
+      "items": [
+        {
+          "desc": "StatusView状态页",
+          "name": "statusview",
+          "path": "/statusview"
+        }
+      ]
+    }
+  ]
+}
