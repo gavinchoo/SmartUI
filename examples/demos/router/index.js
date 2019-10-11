@@ -4,7 +4,7 @@ import navConf from "../nav.config.json";
 
 Vue.use(Router);
 
-let routes = [];
+let routes = [{ path: "*", redirect: "/start" }];
 
 Object.keys(navConf).forEach(header => {
   routes = routes.concat(navConf[header]);
@@ -21,6 +21,7 @@ let addComponent = router => {
     }
   });
 };
+
 addComponent(routes);
 
 export default new Router({

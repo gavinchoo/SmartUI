@@ -2,7 +2,7 @@
   "开发指南": [
     {
       "name": "index",
-      "path": "/",
+      "path": "/start",
       "type": "pages"
     }
   ],

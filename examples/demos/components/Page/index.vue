@@ -21,8 +21,10 @@ export default {
   methods: {
     onBack() {
       let iframe = parent.document.getElementById("demo-iframe");
+      console.log(iframe);
       if (iframe) {
-        iframe.contentWindow.history.go(-1);
+        iframe.src = "/smart-ui/demos/#/start";
+        iframe.contentWindow.location.reload(true);
       } else {
         this.$router.go(-1);
       }

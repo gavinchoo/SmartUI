@@ -8,7 +8,7 @@
           <div class="phone">
             <iframe
               id="demo-iframe"
-              src="/smart-ui/demos"
+              src="/smart-ui/demos/#/start"
               class="demo-page"
             ></iframe>
           </div>
@@ -50,5 +50,5 @@ export default {
 </script>
 
 <style lang="less" type="text/less">
-@import "./assets/less/index";
+@import "./styles/index";
 </style>

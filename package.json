@@ -1,5 +1,5 @@
 {
-  "name": "smart-ui",
+  "name": "smartui",
   "version": "1.0.0",
   "description": "A Vue.js project",
   "author": "zhujianwei134",
@@ -15,8 +15,14 @@
     "lint": "eslint --ext .js,.vue src test/unit test/e2e/specs",
     "build": "cross-env NODE_ENV=production node build/build.js",
     "build-docs": "cross-env NODE_ENV=production CHANNEL=docs node build/build.js",
-    "build-demos": "cross-env NODE_ENV=production CHANNEL=demos node build/build.js"
+    "build-demos": "cross-env NODE_ENV=production CHANNEL=demos node build/build.js",
+    "build-publish": "cross-env NODE_ENV=production CHANNEL=publish node build/build.js"
   },
+  "main": "dist/smartui.min.js",
+  "files": [
+    "dist",
+    "packages"
+  ],
   "dependencies": {
     "axios": "^0.19.0",
     "babel-polyfill": "^6.26.0",

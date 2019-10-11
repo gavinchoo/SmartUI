@@ -9,7 +9,7 @@ let config = {
 
 let channel = process.env.CHANNEL;
 
-if (channel == "docs") {
+if (channel == "docs") { // 打包docs
     config = {
         page: './examples/docs/main',
         template: "index.html",
@@ -18,12 +18,24 @@ if (channel == "docs") {
         type: 'pc',
         title: ""
     };
-} else if (channel == "demos") {
+} else if (channel == "demos") { // 打包demos
     config = {
         page: './examples/demos/main',
         template: "index-m.html",
         publicPath: '/smart-ui/',
         subDirectory: 'demos',
+        type: 'mobile',
+        title: ''
+    };
+} else if (channel == "publish") { // 打包发布npm包
+    config = {
+        page: './src/index', 
+        template: "index-m.html",
+        publicPath: '/',
+        subDirectory: '',
+        cssfilename: "smartui.min.css", // 输出样式文件名称
+        jsfilename: "smartui.min.js",   // 输出JS文件名称
+        libraryname: "smartui",
         type: 'mobile',
         title: ''
     };
