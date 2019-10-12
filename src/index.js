@@ -8,11 +8,10 @@ import SmartImageSelect from "../packages/ImageSelect";
 import SmartMutilLineTextCell from "../packages/MutilLineTextCell";
 import SmartHorizontalRadioCell from "../packages/HorizontalRadioCell";
 
-// 按需引入mintui组件
-import "./mintui";
-
 import "./styles/index.less";
 import "./utils/jsbridge";
+
+import mintui from "./mintui";
 
 export {
   SmartPage,
@@ -41,6 +40,7 @@ const components = [
 const version = "1.0.0";
 const install = function(Vue) {
   if (install.installed) return;
+  mintui.install(Vue);
   components.map(component => Vue.component(component.name, component));
 };
 

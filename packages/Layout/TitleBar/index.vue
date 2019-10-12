@@ -30,7 +30,14 @@ export default {
       if (this.onBack) {
         this.onBack();
       } else {
-        this.$router.go(-1);
+        if (
+          this.$router.history.current &&
+          this.$router.history.current.path == "/"
+        ) {
+          window.JSBridge.call("closeNativeView", {}, function() {});
+        } else {
+          this.$router.go(-1);
+        }
       }
     }
   }
@@ -42,6 +49,19 @@ export default {
   width: 0.48rem;
   vertical-align: baseline;
 }
+/deep/.mint-header {
+  background: #108ee9;
+  font-size: 0.48rem;
+  height: 1.2rem;
+  line-height: 1;
+}
+
+/deep/.mint-header-title {
+  font-size: 0.48rem;
+  font-family: PingFangSC-Medium;
+  font-weight: 500;
+}
+
 /deep/.mint-button-icon {
   vertical-align: baseline;
   display: inline-block;
