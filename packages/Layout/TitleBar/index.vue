@@ -49,8 +49,9 @@ export default {
   width: 0.48rem;
   vertical-align: baseline;
 }
+
 /deep/.mint-header {
-  background: #108ee9;
+  background-color: #108ee9;
   font-size: 0.48rem;
   height: 1.2rem;
   line-height: 1;

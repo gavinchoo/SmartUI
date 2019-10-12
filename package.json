@@ -1,5 +1,5 @@
 {
-  "name": "smartui",
+  "name": "smart-ui",
   "version": "1.0.0",
   "description": "A Vue.js project",
   "author": "zhujianwei134",
@@ -18,8 +18,8 @@
     "build-demos": "cross-env NODE_ENV=production CHANNEL=demos node build/build.js",
     "build-publish": "cross-env NODE_ENV=production CHANNEL=publish node build/build.js"
   },
-  "main": "dist/smartui.min.js",
-  "style": "dist/smartui.min.css",
+  "main": "dist/smart-ui.min.js",
+  "style": "dist/smart-ui.min.css",
   "files": [
     "dist",
     "packages",
